@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="80mm"
+   height="80mm"
+   viewBox="0 0 80 80"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true">
+    <inkscape:grid
+       id="grid2"
+       units="mm"
+       originx="-65"
+       originy="-34.999996"
+       spacingx="0.99999998"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="powerstroke"
+       id="path-effect8"
+       is_visible="true"
+       lpeversion="1.3"
+       scale_width="1"
+       interpolator_type="CubicBezierJohan"
+       interpolator_beta="0.2"
+       start_linecap_type="zerowidth"
+       end_linecap_type="zerowidth"
+       offset_points="0,0"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       not_jump="false"
+       sort_points="true"
+       message="&lt;b&gt;Ctrl + click&lt;/b&gt; on existing node and move it" />
+    <inkscape:path-effect
+       effect="powerstroke"
+       id="path-effect6"
+       is_visible="true"
+       lpeversion="1.3"
+       scale_width="1"
+       interpolator_type="CubicBezierJohan"
+       interpolator_beta="0.2"
+       start_linecap_type="zerowidth"
+       end_linecap_type="zerowidth"
+       offset_points="0,0"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       not_jump="false"
+       sort_points="true"
+       message="&lt;b&gt;Ctrl + click&lt;/b&gt; on existing node and move it" />
+    <inkscape:path-effect
+       effect="powerstroke"
+       id="path-effect4"
+       is_visible="true"
+       lpeversion="1.3"
+       scale_width="1"
+       interpolator_type="CubicBezierJohan"
+       interpolator_beta="0.2"
+       start_linecap_type="zerowidth"
+       end_linecap_type="zerowidth"
+       offset_points="0,0"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       not_jump="false"
+       sort_points="true"
+       message="&lt;b&gt;Ctrl + click&lt;/b&gt; on existing node and move it" />
+    <inkscape:path-effect
+       effect="fill_between_many"
+       method="bsplinespiro"
+       autoreverse="false"
+       close="false"
+       join="false"
+       linkedpaths="#path5,0,1"
+       id="path-effect7"
+       is_visible="true"
+       lpeversion="0" />
+    <inkscape:path-effect
+       effect="fill_between_many"
+       method="bsplinespiro"
+       autoreverse="false"
+       close="false"
+       join="false"
+       linkedpaths="#path8,0,1"
+       id="path-effect9"
+       is_visible="true"
+       lpeversion="0" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-65,-34.999996)">
+    <rect
+       style="fill:#547db5;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none"
+       id="rect1"
+       width="80"
+       height="80"
+       x="65"
+       y="35"
+       ry="1.9545825e-15" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none"
+       id="rect2"
+       width="40"
+       height="40"
+       x="105"
+       y="34.999996"
+       ry="5.9116649e-15" />
+    <path
+       style="fill:#52a635;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;stroke-dasharray:none"
+       d="M 64.303991,114.70131 C 73.076072,106.14364 88.150934,91.437236 105,74.999997 92.023557,62.023554 77.976444,47.976441 65.000001,34.999998 64.711837,67.998139 64.454017,97.521582 64.303991,114.70131 Z m 0,0 C 64.454017,97.521582 64.711837,67.998139 65.000001,34.999998 77.976444,47.976441 92.023557,62.023554 105,74.999997 88.150934,91.437236 73.076072,106.14364 64.303991,114.70131 Z"
+       id="path4"
+       inkscape:path-effect="#path-effect4"
+       inkscape:original-d="M 64.303991,114.70131 105,74.999997 65.000001,34.999998 Z"
+       inkscape:linked-fill="path5"
+       transform="translate(0.6960105,0.29868675)" />
+    <path
+       inkscape:original-d="M 0,0"
+       inkscape:path-effect="#path-effect7"
+       d="M 65.000001,115 V 34.999998 L 105,74.999997 Z"
+       id="path7"
+       style="fill:#52a635;stroke-width:0;stroke-dasharray:none" />
+    <path
+       style="fill:#52a635;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;stroke-dasharray:none"
+       d="m 65.000001,115 c 0,-17.244111 0,-46.878197 0,-80.000002 C 77.976444,47.976441 92.023557,62.023554 105,74.999997 88.439098,91.560901 73.622056,106.37794 65.000001,115 Z m 0,0 C 73.622056,106.37794 88.439098,91.560901 105,74.999997 92.023557,62.023554 77.976444,47.976441 65.000001,34.999998 c 0,33.121805 0,62.755891 0,80.000002 z"
+       id="path5"
+       inkscape:path-effect="#path-effect6"
+       inkscape:original-d="M 65.000001,115 V 34.999998 L 105,74.999997 Z"
+       inkscape:linked-fill="path7" />
+    <path
+       inkscape:original-d="M 0,0"
+       inkscape:path-effect="#path-effect9"
+       d="M 65.000001,115 105,74.999997 145,115 Z"
+       id="path9"
+       style="fill:#1d1d21;fill-opacity:1;stroke-width:0;stroke-dasharray:none" />
+    <path
+       style="fill:#1d1d21;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;stroke-dasharray:none"
+       d="M 65.000001,115 C 73.622056,106.37794 88.439098,91.560901 105,74.999997 117.97644,87.976442 132.02356,102.02356 145,115 c -33.1218,0 -62.755888,0 -79.999999,0 z m 0,0 C 82.244112,115 111.8782,115 145,115 132.02356,102.02356 117.97644,87.976442 105,74.999997 88.439098,91.560901 73.622056,106.37794 65.000001,115 Z"
+       id="path8"
+       inkscape:path-effect="#path-effect8"
+       inkscape:original-d="M 65.000001,115 105,74.999997 145,115 Z"
+       inkscape:linked-fill="path9" />
+  </g>
+</svg>

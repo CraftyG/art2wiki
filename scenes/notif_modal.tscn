@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bsiib3df2oss7"]
+
+[ext_resource type="Script" uid="uid://be8w8grk8foxs" path="res://scripts/notif_modal.gd" id="1_eoove"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoove"]
+bg_color = Color(0.10980392, 0.10980392, 0.10980392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="NotifModal" type="PanelContainer" unique_id=488730477]
+top_level = true
+anchors_preset = -1
+anchor_right = 0.67300004
+anchor_bottom = 0.094000004
+offset_right = 136.03198
+offset_bottom = -0.06400108
+theme_override_styles/panel = SubResource("StyleBoxFlat_eoove")
+script = ExtResource("1_eoove")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1654713664]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[wave]You're not supposed to be seeing this message...[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1

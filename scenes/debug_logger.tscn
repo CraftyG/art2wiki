@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b2n6uvv5x2nk0"]
+
+[ext_resource type="Script" uid="uid://b0i47nrmj7w4q" path="res://scripts/logger.gd" id="1_e77gg"]
+
+[node name="DebugLogger" type="Node" unique_id=372428691]
+script = ExtResource("1_e77gg")

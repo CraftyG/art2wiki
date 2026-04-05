@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="ART2Wiki Converter"
+run/main_scene="uid://bgse1subhnksb"
+config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/use_filter=false
+boot_splash/image="uid://1rgs4h06se0w"
+config/icon="uid://bo8bhji2frkqo"
+
+[display]
+
+window/size/viewport_width=416
+window/size/viewport_height=256
+window/size/maximize_disabled=true
+window/subwindows/embed_subwindows=false
+window/stretch/mode="canvas_items"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+textures/decals/filter=2
+textures/light_projectors/filter=2

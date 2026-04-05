@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://bgse1subhnksb"]
+
+[ext_resource type="Script" uid="uid://tltjyxpdnr7n" path="res://scripts/menu_art2wiki.gd" id="1_vjb58"]
+[ext_resource type="PackedScene" uid="uid://c8fmmw8q62uul" path="res://scenes/art_2_wiki.tscn" id="1_yqeox"]
+[ext_resource type="PackedScene" uid="uid://b2n6uvv5x2nk0" path="res://scenes/debug_logger.tscn" id="3_con2f"]
+
+[node name="Menu" type="Control" unique_id=1018148641]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_vjb58")
+
+[node name="ART2Wiki" parent="." unique_id=1846561518 instance=ExtResource("1_yqeox")]
+
+[node name="DebugLogger" parent="ART2Wiki" unique_id=372428691 instance=ExtResource("3_con2f")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2140843324]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -164.0
+offset_top = -246.0
+offset_right = 164.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Title" type="HBoxContainer" parent="VBoxContainer" unique_id=1786727217]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Title" unique_id=1498204977]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Title/PanelContainer" unique_id=1008909064]
+layout_mode = 2
+text = "ART2Wiki Converter"
+horizontal_alignment = 1
+
+[node name="InfoButton" type="Button" parent="VBoxContainer/Title" unique_id=19801898]
+layout_mode = 2
+tooltip_text = "What is this?"
+text = " ? "
+
+[node name="ModID" type="HBoxContainer" parent="VBoxContainer" unique_id=746584456]
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "The mod's ID. Used when listing the tag as it appears
+as a resource location. Defaults to 'minecraft' if left empty."
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ModID" unique_id=1469419937]
+layout_mode = 2
+text = "Mod ID:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/ModID" unique_id=1317895205]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "minecraft"
+
+[node name="MiddleDir" type="HBoxContainer" parent="VBoxContainer" unique_id=1226135877]
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Optional. Used for when the tag file appears further into the directory
+than the initial registry folder. eg. 'minecraft:has_structure/mineshaft'"
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MiddleDir" unique_id=1481402615]
+layout_mode = 2
+text = "Middle Directory:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/MiddleDir" unique_id=2136443579]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TagPath" type="HBoxContainer" parent="VBoxContainer" unique_id=571925278]
+clip_contents = true
+layout_mode = 2
+tooltip_text = "Select where to search for tag files."
+
+[node name="Label" type="Label" parent="VBoxContainer/TagPath" unique_id=9667145]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Tag Folder: "
+
+[node name="Button" type="Button" parent="VBoxContainer/TagPath" unique_id=740563989]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Select Folder"
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="OutputPath" type="HBoxContainer" parent="VBoxContainer" unique_id=1135009720]
+layout_mode = 2
+tooltip_text = "Select where the output text will be saved as."
+
+[node name="Label" type="Label" parent="VBoxContainer/OutputPath" unique_id=1051707864]
+layout_mode = 2
+text = "Wikitext Path:"
+
+[node name="Button" type="Button" parent="VBoxContainer/OutputPath" unique_id=2006890432]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Select Folder"
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1261930804]
+layout_mode = 2
+
+[node name="ConvertButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=348070562]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Convert Files"
+
+[node name="FD_Tag" type="FileDialog" parent="." unique_id=490199900]
+oversampling_override = 1.0
+title = "Open a Directory"
+initial_position = 4
+file_mode = 2
+display_mode = 1
+access = 2
+use_native_dialog = true
+
+[node name="FD_Output" type="FileDialog" parent="." unique_id=802313406]
+oversampling_override = 1.0
+title = "Set Output File:"
+initial_position = 4
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.txt")
+use_native_dialog = true
+
+[node name="Window" type="Window" parent="." unique_id=1999749690]
+oversampling_override = 1.0
+title = "About"
+initial_position = 4
+size = Vector2i(400, 300)
+visible = false
+unresizable = true
+maximize_disabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window" unique_id=690435509]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -151.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Window/VBoxContainer" unique_id=1120166829]
+layout_mode = 2
+text = "About ART2Wiki Converter"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Window/VBoxContainer" unique_id=477236976]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/VBoxContainer/PanelContainer" unique_id=215229641]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Window/VBoxContainer/PanelContainer/MarginContainer" unique_id=1501823579]
+custom_minimum_size = Vector2(200, 275)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Window/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=762206363]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "The Abnormals Registry Tag to Wikitext Converter (or ART2Wiki for short) is a quick tool made for assisting documentation on the many registry tags the mods by Team Abnormals provide. This tool reads each tag file stored within a folder and converts their data into a text format that can be used for the Team Abnormals Wiki
+
+For this tool to work, it would first need paths to both a folder containing the JSON files for it to scan, and to where the converted wikitext will output to.  Then the Mod's ID and middle directories must be typed in a way that can be combined into a valid identifier (Hovering over on some of the settings for a bit more info) Once those are properly set, click on \"Convert Files\" and the converter will do its thing. It will skip any JSON files that don't have a \"vaules\" key, as well as only listing any valid item IDs within each tag (Which the mods should already have them be valid for them to work.)
+
+Once conversion is complete, the output file will be created/overwritten wherever you've set it. In the file, each section of a listed tag will have placeholder text that must be replaced with the appropriate description of that tag.
+"
+autowrap_mode = 2
+
+[connection signal="reported" from="ART2Wiki" to="." method="_on_art_2_wiki_reported"]
+[connection signal="pressed" from="VBoxContainer/Title/InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="text_changed" from="VBoxContainer/ModID/LineEdit" to="." method="_on_mod_id_text_changed"]
+[connection signal="text_submitted" from="VBoxContainer/ModID/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_changed" from="VBoxContainer/MiddleDir/LineEdit" to="." method="_on_middle_dir_text_changed"]
+[connection signal="text_submitted" from="VBoxContainer/MiddleDir/LineEdit" to="." method="_on_middle_dir_text_submitted"]
+[connection signal="pressed" from="VBoxContainer/TagPath/Button" to="." method="_on_tag_path_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OutputPath/Button" to="." method="_on_wiki_output_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ConvertButton" to="." method="_on_convert_button_pressed"]
+[connection signal="dir_selected" from="FD_Tag" to="." method="_on_fd_tag_dir_selected"]
+[connection signal="file_selected" from="FD_Output" to="." method="_on_fd_output_file_selected"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
