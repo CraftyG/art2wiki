@@ -12,8 +12,37 @@ const NOTIF_MODAL = preload("res://scenes/notif_modal.tscn")
 @onready var btn_tag_dir = %BtnTagDir
 @onready var btn_wiki_dir = %BtnWikiDir
 @onready var btn_convert = %BtnConvert
+@onready var btn_info = %InfoButton
+@onready var in_mod_id = %ModIDInput
+@onready var in_mid_dir = %MidDirInput
 
-#region : SettingPanel focus llogic
+func _ready() -> void:
+	
+	art2wiki.reported.connect(_on_art_2_wiki_reported)
+	# Connecting: buttons
+	btn_tag_dir.pressed.connect(_on_btn_tag_dir_pressed)
+	btn_tag_dir.focus_entered.connect(_on_btn_tag_dir_focus_entered)
+	btn_tag_dir.focus_exited.connect(_on_btn_tag_dir_focus_exited)
+	
+	btn_wiki_dir.pressed.connect(_on_btn_wiki_dir_pressed)
+	btn_wiki_dir.focus_entered.connect(_on_btn_wiki_dir_focus_entered)
+	btn_wiki_dir.focus_exited.connect(_on_btn_wiki_dir_focus_exited)
+	
+	btn_info.pressed.connect(_on_info_button_pressed)
+	btn_convert.pressed.connect(_on_btn_convert_pressed)
+	# File Dialog selections
+	fd_tag.dir_selected.connect(_on_fd_tag_dir_selected)
+	fd_output.file_selected.connect(_on_fd_output_file_selected)
+	# Inputs
+	in_mod_id.focus_entered.connect(_on_mod_id_input_focus_entered)
+	in_mod_id.focus_exited.connect(_on_mod_id_input_focus_exited)
+	in_mod_id.text_changed.connect(_on_mod_id_input_text_changed)
+	
+	in_mid_dir.focus_entered.connect(_on_mid_dir_input_focus_entered)
+	in_mid_dir.focus_exited.connect(_on_mid_dir_input_focus_exited)
+	in_mid_dir.text_changed.connect(_on_mid_dir_input_text_changed)
+
+#region : SettingPanel focus logic
 func _on_mod_id_input_focus_entered() -> void:
 	mod_id_panel.theme_type_variation = "SettingPanel_Hovered"
 
@@ -78,14 +107,6 @@ func _on_btn_convert_pressed() -> void:
 			return
 		art2wiki.logger.log_info("Starting conversion...")
 		art2wiki.convert_tag_files(art2wiki.tag_folder_path)
-
-
-func _on_mod_id_input_text_submitted(new_text: String) -> void:
-	art2wiki.mod_id = new_text
-
-
-func _on_mid_dir_input_text_submitted(new_text: String) -> void:
-	art2wiki.middle_dir = new_text
 
 
 func _on_mod_id_input_text_changed(new_text: String) -> void:

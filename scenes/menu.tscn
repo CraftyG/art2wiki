@@ -57,7 +57,8 @@ text = "ART2Wiki Converter"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="MenuContainer/VBoxContainer/TitlePanel/HBoxContainer" unique_id=1450280773]
+[node name="InfoButton" type="Button" parent="MenuContainer/VBoxContainer/TitlePanel/HBoxContainer" unique_id=1450280773]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -230,7 +231,6 @@ use_native_dialog = true
 
 [node name="ART2Wiki" parent="." unique_id=1846561518 instance=ExtResource("5_lg5ud")]
 
-[connection signal="pressed" from="MenuContainer/VBoxContainer/TitlePanel/HBoxContainer/Button" to="MenuContainer" method="_on_info_button_pressed"]
 [connection signal="focus_entered" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel/HBoxContainer/ModIDInput" to="MenuContainer" method="_on_mod_id_input_focus_entered"]
 [connection signal="focus_exited" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel/HBoxContainer/ModIDInput" to="MenuContainer" method="_on_mod_id_input_focus_exited"]
 [connection signal="text_changed" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel/HBoxContainer/ModIDInput" to="MenuContainer" method="_on_mod_id_input_text_changed"]
