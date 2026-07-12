@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dt26q5sqmj2j6"]
+
+[ext_resource type="Theme" uid="uid://vlbks062fbdu" path="res://resources/theme.tres" id="1_a7jd5"]
+[ext_resource type="Script" uid="uid://dudc8nqrg25fa" path="res://scripts/info_window.gd" id="1_qgsps"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dbrg"]
+bg_color = Color(0.14509805, 0.17254902, 0.37254903, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="SystemFont" id="SystemFont_ghm5x"]
+font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qgsps"]
+font = SubResource("SystemFont_ghm5x")
+font_size = 14
+
+[sub_resource type="SystemFont" id="SystemFont_052uq"]
+font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_2rxvn"]
+font = SubResource("SystemFont_052uq")
+font_size = 14
+
+[node name="InfoWindow" type="Window" unique_id=1493398997]
+oversampling_override = 1.0
+title = "About"
+initial_position = 2
+size = Vector2i(400, 300)
+unresizable = true
+popup_window = true
+script = ExtResource("1_qgsps")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=650534623]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a7jd5")
+theme_type_variation = &"MenuPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=348174977]
+layout_mode = 2
+
+[node name="HeaderPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=1712371382]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("1_a7jd5")
+theme_type_variation = &"TitlePanel"
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HeaderPanel" unique_id=441224737]
+layout_mode = 2
+text = "About ART2WIKI"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1495714470]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=473644267]
+custom_minimum_size = Vector2(208, 248)
+layout_mode = 2
+offset_transform_position = Vector2(-8, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer" unique_id=36179129]
+custom_minimum_size = Vector2(356, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer" unique_id=1458088073]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+alignment = 1
+
+[node name="Tab1Title" type="PanelContainer" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2042455105]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1dbrg")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Tab1Title" unique_id=1626854605]
+layout_mode = 2
+text = "OVERVIEW"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1832697677]
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 2
+text = "Abnormals Registry Tag to Wikitext Converter (or ART2WIKI) is a quick tool made for assisting documentation on the many registry tags the mods from Team Abnormals  provide. It reads each tag file stored in a folder and converts the data into formatted text that can be used for the Team Abnormals Wiki."
+label_settings = SubResource("LabelSettings_qgsps")
+autowrap_mode = 2
+
+[node name="Tab2Title" type="PanelContainer" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1494366165]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1dbrg")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/Tab2Title" unique_id=769317706]
+layout_mode = 2
+text = "HOW TO USE"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1093615809]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+text = "1. Set up paths to a folder containing the tag files, and a .txt file for the formatted text to be stored.
+2. Type in the Mod's ID and, if needed, the middle directory. They must be inputted as valid identifiers (Hover over the settings for more info).
+3. Click \"Convert Files\". ART2WIKI will skip any invalid files found inside the folder, as well as only listing valid entries from each file.
+4. Once conversion is complete, the output file is ready for use. Note that there's placeholder text for the description of each tag. Replace them accordingly during documenting."
+label_settings = SubResource("LabelSettings_2rxvn")
+autowrap_mode = 3
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
