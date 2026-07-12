@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="ART2Wiki Converter"
-run/main_scene="uid://bgse1subhnksb"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="uid://cpl5u4tnw11ln"
+config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/use_filter=false
 boot_splash/image="uid://1rgs4h06se0w"
 config/icon="uid://bo8bhji2frkqo"
@@ -21,6 +21,7 @@ config/icon="uid://bo8bhji2frkqo"
 
 window/size/viewport_width=416
 window/size/viewport_height=256
+window/size/resizable=false
 window/size/maximize_disabled=true
 window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"

@@ -1,129 +1,215 @@
-[gd_scene format=3 uid="uid://bgse1subhnksb"]
+[gd_scene format=3 uid="uid://cpl5u4tnw11ln"]
 
-[ext_resource type="Script" uid="uid://tltjyxpdnr7n" path="res://scripts/menu_art2wiki.gd" id="1_vjb58"]
-[ext_resource type="PackedScene" uid="uid://c8fmmw8q62uul" path="res://scenes/art_2_wiki.tscn" id="1_yqeox"]
-[ext_resource type="PackedScene" uid="uid://b2n6uvv5x2nk0" path="res://scenes/debug_logger.tscn" id="3_con2f"]
+[ext_resource type="Script" uid="uid://dlob2odsuyf60" path="res://scripts/menu.gd" id="1_g3eks"]
+[ext_resource type="Texture2D" uid="uid://dd7fclumxmrdk" path="res://img/info.svg" id="1_o1a3y"]
+[ext_resource type="Theme" uid="uid://vlbks062fbdu" path="res://resources/theme.tres" id="1_yxwx2"]
+[ext_resource type="Texture2D" uid="uid://db8gxcu2h8afw" path="res://img/magnifying_glass.svg" id="4_jk3uo"]
+[ext_resource type="PackedScene" uid="uid://c8fmmw8q62uul" path="res://scenes/art_2_wiki.tscn" id="5_lg5ud"]
+[ext_resource type="PackedScene" uid="uid://dt26q5sqmj2j6" path="res://scenes/info_window.tscn" id="6_ferhi"]
 
-[node name="Menu" type="Control" unique_id=1018148641]
+[sub_resource type="Theme" id="Theme_1dbrg"]
+
+[node name="Menu" type="Control" unique_id=61041404]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_vjb58")
+script = ExtResource("1_g3eks")
 
-[node name="ART2Wiki" parent="." unique_id=1846561518 instance=ExtResource("1_yqeox")]
-
-[node name="DebugLogger" parent="ART2Wiki" unique_id=372428691 instance=ExtResource("3_con2f")]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2140843324]
-clip_contents = true
+[node name="MenuContainer" type="PanelContainer" parent="." unique_id=1343403275]
+custom_minimum_size = Vector2(336, 240)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -164.0
-offset_top = -246.0
-offset_right = 164.0
-offset_bottom = -40.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme = ExtResource("1_yxwx2")
+theme_type_variation = &"MenuPanel"
 
-[node name="Title" type="HBoxContainer" parent="VBoxContainer" unique_id=1786727217]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer" unique_id=1334897932]
+custom_minimum_size = Vector2(336, 240)
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Title" unique_id=1498204977]
+[node name="TitlePanel" type="PanelContainer" parent="MenuContainer/VBoxContainer" unique_id=1831051324]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_yxwx2")
+theme_type_variation = &"TitlePanel"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/VBoxContainer/TitlePanel" unique_id=733299785]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MenuContainer/VBoxContainer/TitlePanel/HBoxContainer" unique_id=825093028]
+custom_minimum_size = Vector2(164, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 5.07
+offset_transform_enabled = true
+offset_transform_position = Vector2(16, 0)
+mouse_filter = 1
+text = "ART2Wiki Converter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MenuContainer/VBoxContainer/TitlePanel/HBoxContainer" unique_id=1450280773]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-7.5, 0)
+offset_transform_visual_only = false
+tooltip_text = "About ART2Wiki"
+theme = ExtResource("1_yxwx2")
+theme_type_variation = &"InfoButton"
+text = " "
+icon = ExtResource("1_o1a3y")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ConfigContainer" type="MarginContainer" parent="MenuContainer/VBoxContainer" unique_id=325182495]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/VBoxContainer/ConfigContainer" unique_id=2037010114]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer" unique_id=795511806]
+custom_minimum_size = Vector2(0, 136)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer" unique_id=764109563]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer" unique_id=635708087]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/Title/PanelContainer" unique_id=1008909064]
+[node name="ModIDPanel" type="PanelContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2024845123]
+unique_name_in_owner = true
 layout_mode = 2
-text = "ART2Wiki Converter"
-horizontal_alignment = 1
-
-[node name="InfoButton" type="Button" parent="VBoxContainer/Title" unique_id=19801898]
-layout_mode = 2
-tooltip_text = "What is this?"
-text = " ? "
-
-[node name="ModID" type="HBoxContainer" parent="VBoxContainer" unique_id=746584456]
-layout_mode = 2
-size_flags_vertical = 4
 tooltip_text = "The mod's ID. Used when listing the tag as it appears
 as a resource location. Defaults to 'minecraft' if left empty."
-alignment = 2
+theme = ExtResource("1_yxwx2")
+theme_type_variation = &"SettingPanel"
 
-[node name="Label" type="Label" parent="VBoxContainer/ModID" unique_id=1469419937]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel" unique_id=1085805379]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel/HBoxContainer" unique_id=1918109056]
 layout_mode = 2
 text = "Mod ID:"
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/ModID" unique_id=1317895205]
+[node name="ModIDInput" type="LineEdit" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel/HBoxContainer" unique_id=17723049]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "minecraft"
+theme = ExtResource("1_yxwx2")
+theme_type_variation = &"CodeLineEdit"
+placeholder_text = "minecraft:"
+caret_blink = true
 
-[node name="MiddleDir" type="HBoxContainer" parent="VBoxContainer" unique_id=1226135877]
+[node name="MiddleDirPanel" type="PanelContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=885212807]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 4
 tooltip_text = "Optional. Used for when the tag file appears further into the directory
-than the initial registry folder. eg. 'minecraft:has_structure/mineshaft'"
-alignment = 2
+than the initial registry folder. eg. 'minecraft:has_structure/...'"
+theme = ExtResource("1_yxwx2")
+theme_type_variation = &"SettingPanel"
 
-[node name="Label" type="Label" parent="VBoxContainer/MiddleDir" unique_id=1481402615]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MiddleDirPanel" unique_id=2089353270]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MiddleDirPanel/HBoxContainer2" unique_id=1525472792]
 layout_mode = 2
 text = "Middle Directory:"
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/MiddleDir" unique_id=2136443579]
+[node name="MidDirInput" type="LineEdit" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MiddleDirPanel/HBoxContainer2" unique_id=1114761900]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("1_yxwx2")
+theme_type_variation = &"CodeLineEdit"
+caret_blink = true
 
-[node name="TagPath" type="HBoxContainer" parent="VBoxContainer" unique_id=571925278]
-clip_contents = true
+[node name="TagPathPanel" type="PanelContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=57713137]
+unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Select where to search for tag files."
+theme = SubResource("Theme_1dbrg")
+theme_type_variation = &"SettingPanel"
 
-[node name="Label" type="Label" parent="VBoxContainer/TagPath" unique_id=9667145]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TagPathPanel" unique_id=2119856334]
 layout_mode = 2
-size_flags_horizontal = 0
-text = "Tag Folder: "
 
-[node name="Button" type="Button" parent="VBoxContainer/TagPath" unique_id=740563989]
-custom_minimum_size = Vector2(100, 0)
+[node name="Label" type="Label" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TagPathPanel/HBoxContainer3" unique_id=244719956]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.55
+text = "Tag Folder:"
+horizontal_alignment = 1
+
+[node name="BtnTagDir" type="Button" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TagPathPanel/HBoxContainer3" unique_id=1719305053]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Select Folder"
-text_overrun_behavior = 3
+icon = ExtResource("4_jk3uo")
+text_overrun_behavior = 5
 clip_text = true
 
-[node name="OutputPath" type="HBoxContainer" parent="VBoxContainer" unique_id=1135009720]
+[node name="WikiPathPanel" type="PanelContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=180912498]
+unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Select where the output text will be saved as."
+theme = ExtResource("1_yxwx2")
+theme_type_variation = &"SettingPanel"
 
-[node name="Label" type="Label" parent="VBoxContainer/OutputPath" unique_id=1051707864]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/WikiPathPanel" unique_id=1853320005]
 layout_mode = 2
-text = "Wikitext Path:"
 
-[node name="Button" type="Button" parent="VBoxContainer/OutputPath" unique_id=2006890432]
+[node name="Label" type="Label" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/WikiPathPanel/HBoxContainer4" unique_id=1689322065]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Select Folder"
-text_overrun_behavior = 3
+size_flags_stretch_ratio = 0.55
+text = "Wikitext Path:"
+horizontal_alignment = 1
+
+[node name="BtnWikiDir" type="Button" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/WikiPathPanel/HBoxContainer4" unique_id=1574935893]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Select .txt File"
+icon = ExtResource("4_jk3uo")
+text_overrun_behavior = 5
 clip_text = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1261930804]
+[node name="BtnConvert" type="Button" parent="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer" unique_id=1145014638]
+unique_name_in_owner = true
 layout_mode = 2
-
-[node name="ConvertButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=348070562]
-layout_mode = 2
-size_flags_horizontal = 3
+theme = ExtResource("1_yxwx2")
+theme_type_variation = &"ConvertButton"
 text = "Convert Files"
 
-[node name="FD_Tag" type="FileDialog" parent="." unique_id=490199900]
+[node name="InfoWindow" parent="." unique_id=1493398997 instance=ExtResource("6_ferhi")]
+visible = false
+
+[node name="FD_Tag" type="FileDialog" parent="." unique_id=1948718801]
 oversampling_override = 1.0
 title = "Open a Directory"
 initial_position = 4
@@ -132,9 +218,9 @@ display_mode = 1
 access = 2
 use_native_dialog = true
 
-[node name="FD_Output" type="FileDialog" parent="." unique_id=802313406]
+[node name="FD_Output" type="FileDialog" parent="." unique_id=237895879]
 oversampling_override = 1.0
-title = "Set Output File:"
+title = "Open a File"
 initial_position = 4
 file_mode = 0
 display_mode = 1
@@ -142,63 +228,24 @@ access = 2
 filters = PackedStringArray("*.txt")
 use_native_dialog = true
 
-[node name="Window" type="Window" parent="." unique_id=1999749690]
-oversampling_override = 1.0
-title = "About"
-initial_position = 4
-size = Vector2i(400, 300)
-visible = false
-unresizable = true
-maximize_disabled = true
+[node name="ART2Wiki" parent="." unique_id=1846561518 instance=ExtResource("5_lg5ud")]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window" unique_id=690435509]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -151.0
-offset_bottom = 151.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Window/VBoxContainer" unique_id=1120166829]
-layout_mode = 2
-text = "About ART2Wiki Converter"
-horizontal_alignment = 1
-
-[node name="PanelContainer" type="PanelContainer" parent="Window/VBoxContainer" unique_id=477236976]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Window/VBoxContainer/PanelContainer" unique_id=215229641]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_right = 4
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Window/VBoxContainer/PanelContainer/MarginContainer" unique_id=1501823579]
-custom_minimum_size = Vector2(200, 275)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Window/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=762206363]
-custom_minimum_size = Vector2(275, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-text = "The Abnormals Registry Tag to Wikitext Converter (or ART2Wiki for short) is a quick tool made for assisting documentation on the many registry tags the mods by Team Abnormals provide. This tool reads each tag file stored within a folder and converts their data into a text format that can be used for the Team Abnormals Wiki
-
-For this tool to work, it would first need paths to both a folder containing the JSON files for it to scan, and to where the converted wikitext will output to.  Then the Mod's ID and middle directories must be typed in a way that can be combined into a valid identifier (Hovering over on some of the settings for a bit more info) Once those are properly set, click on \"Convert Files\" and the converter will do its thing. It will skip any JSON files that don't have a \"vaules\" key, as well as only listing any valid item IDs within each tag (Which the mods should already have them be valid for them to work.)
-
-Once conversion is complete, the output file will be created/overwritten wherever you've set it. In the file, each section of a listed tag will have placeholder text that must be replaced with the appropriate description of that tag.
-"
-autowrap_mode = 2
-
-[connection signal="reported" from="ART2Wiki" to="." method="_on_art_2_wiki_reported"]
-[connection signal="pressed" from="VBoxContainer/Title/InfoButton" to="." method="_on_info_button_pressed"]
-[connection signal="text_changed" from="VBoxContainer/ModID/LineEdit" to="." method="_on_mod_id_text_changed"]
-[connection signal="text_submitted" from="VBoxContainer/ModID/LineEdit" to="." method="_on_line_edit_text_submitted"]
-[connection signal="text_changed" from="VBoxContainer/MiddleDir/LineEdit" to="." method="_on_middle_dir_text_changed"]
-[connection signal="text_submitted" from="VBoxContainer/MiddleDir/LineEdit" to="." method="_on_middle_dir_text_submitted"]
-[connection signal="pressed" from="VBoxContainer/TagPath/Button" to="." method="_on_tag_path_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/OutputPath/Button" to="." method="_on_wiki_output_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ConvertButton" to="." method="_on_convert_button_pressed"]
-[connection signal="dir_selected" from="FD_Tag" to="." method="_on_fd_tag_dir_selected"]
-[connection signal="file_selected" from="FD_Output" to="." method="_on_fd_output_file_selected"]
-[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/TitlePanel/HBoxContainer/Button" to="MenuContainer" method="_on_info_button_pressed"]
+[connection signal="focus_entered" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel/HBoxContainer/ModIDInput" to="MenuContainer" method="_on_mod_id_input_focus_entered"]
+[connection signal="focus_exited" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel/HBoxContainer/ModIDInput" to="MenuContainer" method="_on_mod_id_input_focus_exited"]
+[connection signal="text_changed" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel/HBoxContainer/ModIDInput" to="MenuContainer" method="_on_mod_id_input_text_changed"]
+[connection signal="text_submitted" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ModIDPanel/HBoxContainer/ModIDInput" to="MenuContainer" method="_on_mod_id_input_text_submitted"]
+[connection signal="focus_entered" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MiddleDirPanel/HBoxContainer2/MidDirInput" to="MenuContainer" method="_on_mid_dir_input_focus_entered"]
+[connection signal="focus_exited" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MiddleDirPanel/HBoxContainer2/MidDirInput" to="MenuContainer" method="_on_mid_dir_input_focus_exited"]
+[connection signal="text_changed" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MiddleDirPanel/HBoxContainer2/MidDirInput" to="MenuContainer" method="_on_mid_dir_input_text_changed"]
+[connection signal="text_submitted" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MiddleDirPanel/HBoxContainer2/MidDirInput" to="MenuContainer" method="_on_mid_dir_input_text_submitted"]
+[connection signal="focus_entered" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TagPathPanel/HBoxContainer3/BtnTagDir" to="MenuContainer" method="_on_btn_tag_dir_focus_entered"]
+[connection signal="focus_exited" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TagPathPanel/HBoxContainer3/BtnTagDir" to="MenuContainer" method="_on_btn_tag_dir_focus_exited"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TagPathPanel/HBoxContainer3/BtnTagDir" to="MenuContainer" method="_on_btn_tag_dir_pressed"]
+[connection signal="focus_entered" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/WikiPathPanel/HBoxContainer4/BtnWikiDir" to="MenuContainer" method="_on_btn_wiki_dir_focus_entered"]
+[connection signal="focus_exited" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/WikiPathPanel/HBoxContainer4/BtnWikiDir" to="MenuContainer" method="_on_btn_wiki_dir_focus_exited"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/WikiPathPanel/HBoxContainer4/BtnWikiDir" to="MenuContainer" method="_on_btn_wiki_dir_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/ConfigContainer/VBoxContainer/BtnConvert" to="MenuContainer" method="_on_btn_convert_pressed"]
+[connection signal="dir_selected" from="FD_Tag" to="MenuContainer" method="_on_fd_tag_dir_selected"]
+[connection signal="file_selected" from="FD_Output" to="MenuContainer" method="_on_fd_output_file_selected"]
+[connection signal="reported" from="ART2Wiki" to="MenuContainer" method="_on_art_2_wiki_reported"]
